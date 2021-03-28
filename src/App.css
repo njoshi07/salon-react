@@ -1,10 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 *{
    margin:0;
    padding:0;
    box-sizing: border-box;
 }
 
+.App {
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+}
 .container{
    width: 100%;
    height:100%;
+}
+/* NAVBAR */
+.nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;  
+   margin: 0 50px; 
+   height: 50px;
+}
+.logo{
+    font-size: 2rem;
+    min-width: 50px;
+    /* z-index: 10; */
+}
+/* Menu Hamburger Icon */
+.toggle{ 
+   display:none;
+}
+.navigation{
+   min-width: 500px;
+   overflow: hidden;
+}
+ .listItems{
+   list-style: none;
+   text-align: center;
+   padding: 20px;
+ }
+ .nav-links {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   /* height: 25px; */
+   /* background-color:blue; */
+   /* z-index: 15;  */
+ }
+.listItems{
+   text-decoration-line: none;
+}
+
+
+
+
+
+
+
+/* MEDIA Query */
+@media only screen and (max-device-width: 850px) {
+   .App {
+      overflow-x: hidden;
+   }
+   /* Display Hamburger Menu Icon */
+   .toggle{
+      position: absolute;
+      display: block;
+      background: url(../src/images/menu.png);
+      background-color: black;
+      right: 100px;
+      width: 50px;
+      height: 50px;
+      /* z-index: 15; */
+      background-size: 25px;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+   /* Once clicked (add this class to hamburger html tag) Hamburger menu show close icon */
+   .active{
+      background: url(../src/images/close.png);
+      background-color: black;
+      width: 50px;
+      height: 50px;
+      background-size: 25px;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+
+   /* Create class which will hold all menu links on mobile */
+  
+    .nav-links{      
+       position: absolute;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       left:0;
+       top:50px;
+       height: 100%;
+       width: 100%;
+       transform: translateX(100%);
+       background-color: brown;
+       transition: transform 0.5s ease-in;
+    }
+    .nav{
+       background: blueviolet;
+    }
+
+   .nav-active{
+     transform: translateX(0%);
+   }  
+   /* Here */
+  
 }
