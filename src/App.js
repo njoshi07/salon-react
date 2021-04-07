@@ -1,6 +1,7 @@
 import './App.css';
-import { Route, Switch } from "react-router";
-import { BrowserRouter as Router,  BrowserRouter } from 'react-router-dom';
+import './assets/main.css';
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 import Nav  from "./components/Nav/Nav";
@@ -15,16 +16,16 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-      <Router history={BrowserRouter}>
-      <div>
-        <Nav />
-        <Switch>
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/services" component={Services}></Route>
-            <Route path="/careers" component={Career}></Route>
-            <Route path="/contact" component={Contact}></Route>
-        </Switch>        
-      </div>
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+              <Route path="/" exact component={Home}></Route>
+              <Route path="/services" exact component={Services}></Route>
+              <Route path="/careers" exact component={Career}></Route>
+              <Route path="/contact" exact component={Contact}></Route>
+          </Switch>        
+        </div>
     </Router> 
       </div>
  
